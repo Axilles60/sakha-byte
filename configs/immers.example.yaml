@@ -1,0 +1,24 @@
+# Deployment intent only; this file does not create or modify cloud resources.
+provider: immers.cloud
+execution: remote_only
+workspace: /srv/sakha_byte
+recommended:
+  os: Ubuntu 24.04
+  gpu: NVIDIA A100 80GB
+  gpus: 1
+  ram_gib: 64
+  disk_gib: 240
+  model_loading: sequential
+  public_ports: [22]
+  ssh_source: YOUR_IP_CIDR
+access:
+  ssh_host: TO_BE_PROVIDED
+  ssh_user: TO_BE_VERIFIED_FROM_IMAGE
+  ssh_port: 22
+  openstack_cloud: immers
+  credential_storage: outside_repository
+budget:
+  hourly_limit_rub: null
+  total_limit_rub: null
+  completion_action: report_then_shelve_when_authorized
+  auto_delete: false

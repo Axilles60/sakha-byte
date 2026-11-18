@@ -1,0 +1,9 @@
+{
+  "unimorph_sah": {
+    "github_repo": "unimorph/sah",
+    "ref": "main",
+    "files": ["README.md", "sah"],
+    "purpose": "External morphology resource, not a comprehension gold set",
+    "license_note": "Check upstream terms and the Apertium source before redistribution/training."
+  }
+}

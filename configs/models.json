@@ -1,0 +1,24 @@
+{
+  "bwen": {
+    "repo_id": "allenai/Bwen-8B",
+    "revision": "b2644f7827c21c3276d70cb82e6558aa03b9670e",
+    "family": "bolmo",
+    "trust_remote_code": true,
+    "tokenizer_dependency": {
+      "repo_id": "Qwen/Qwen3-8B",
+      "revision": "b968826d9c46dd6066d109eabc6255188de91218"
+    }
+  },
+  "qwen": {
+    "repo_id": "Qwen/Qwen3-8B-Base",
+    "revision": "49e3418fbbbca6ecbdf9608b4d22e5a407081db4",
+    "family": "qwen3",
+    "trust_remote_code": false
+  },
+  "evabyte": {
+    "repo_id": "EvaByte/EvaByte",
+    "revision": "1c6283b2c439b731897e4202af789da99ba9ace2",
+    "family": "evabyte",
+    "trust_remote_code": true
+  }
+}

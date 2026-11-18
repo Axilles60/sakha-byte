@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "ud_lemma": {"source":"ud_yakut", "files":["sah_yktdt-ud-test.conllu"], "adapter":"ud_lemma", "seed":42, "review_status":"draft"},
+    "ner_type": {"source":"sakha_ner_saas", "files":["sakha-ner/sakha-ner-merged_with_negatives.json"], "adapter":"labelstudio_ner_type", "split_file":"sakha-ner/sakha_ner_docsplit_FAIR_v1.json", "split":"test", "review_status":"draft"},
+    "saas": {"source":"sakha_ner_saas", "files":["sakha-sa/SAAS-corpus/*.csv","sakha-sa/SAAS-corpus/*.tsv","sakha-sa/SAAS-corpus/*.xlsx"], "adapter":"sentiment", "text_field":"text", "label_field":"sentiment", "id_field":null, "split_field":null, "split_value":null, "delimiter":null, "sheet":null, "label_map":{"Positive":0,"Negative":1,"Neutral":2}, "skip_labels":["Skip"], "review_status":"draft", "notes":"Inspect actual file columns and select files first. Without split_field use an explicit remote --ids-file of held-out record IDs. No implicit random split."}
+  }
+}

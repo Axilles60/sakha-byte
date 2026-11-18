@@ -1,0 +1,6 @@
+# Candidate server environment; not executed or validated on the author's device.
+# Install CUDA-enabled torch from the appropriate official PyTorch index first.
+torch==2.8.0
+transformers==4.57.3
+accelerate==1.11.0
+xlstm==2.0.4

@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-11-16",
+  "execution_policy": "remote_only",
+  "status": "source_registry_with_selected_download_and_conversion_profiles; immutable_locks_created_on_server",
+  "revision_policy": "Resolve immutable revisions and file hashes on the server before downloading; retain remote lock manifests.",
+  "sources": {
+    "sakha_mono": {
+      "url": "https://huggingface.co/datasets/ailabykt/sakha-corpus-mono",
+      "provider": "huggingface_dataset",
+      "repo_id": "ailabykt/sakha-corpus-mono",
+      "role": "continued_pretraining_candidate",
+      "priority": "P0",
+      "card_verified": true,
+      "gated": true,
+      "declared_license": "CC-BY-4.0",
+      "requirements": ["User accepts Hugging Face access conditions", "Read token available only on server", "Inspect actual schema", "OCR and language quality filtering", "Document and cross-corpus deduplication", "Exclude every benchmark source before splitting"],
+      "notes": "natlib texts include OCR artifacts. File size is not a word/token count. No download or acceptance has occurred."
+    },
+    "sakha_parallel": {
+      "url": "https://huggingface.co/datasets/ailabykt/sakha-russian-parallel",
+      "provider": "huggingface_dataset",
+      "repo_id": "ailabykt/sakha-russian-parallel",
+      "role": "bilingual_training_candidate",
+      "priority": "P1",
+      "card_verified": true,
+      "gated": true,
+      "declared_license": "CC-BY-4.0",
+      "requirements": ["User accepts access conditions", "Inspect alignment and OCR quality", "Deduplicate against monolingual corpus and held-out translation tests"],
+      "notes": "Card identifies sah OCR and Lingtrain Aligner. Not an independently validated comprehension test."
+    },
+    "wmt_yakut": {
+      "url": "https://huggingface.co/datasets/wmt/yakut",
+      "provider": "huggingface_dataset",
+      "repo_id": "wmt/yakut",
+      "role": "parallel_training_candidate",
+      "priority": "P1",
+      "card_verified": true,
+      "gated": false,
+      "declared_license": null,
+      "requirements": ["Resolve source licensing", "Preserve source provenance", "Cross-corpus deduplication", "Do not treat train split as a ready-made independent test"],
+      "notes": "Viewer has a train split of approximately 30.1k rows with translation.ru and translation.sah."
+    },
+    "averoo_parallel": {
+      "url": "https://huggingface.co/datasets/averoo/sakha-russian-parallel-corpora-all",
+      "provider": "huggingface_dataset",
+      "repo_id": "averoo/sakha-russian-parallel-corpora-all",
+      "role": "parallel_training_candidate",
+      "priority": "P2",
+      "card_verified": true,
+      "gated": false,
+      "declared_license": null,
+      "requirements": ["Inspect actual row counts and source provenance", "Resolve licensing", "Check overlap with ailabykt and WMT before combining"],
+      "notes": "Viewer count is approximately 45.1k rows. Do not sum source sizes as unique data."
+    },
+    "sakha_ner_saas": {
+      "url": "https://github.com/enifimov81k/sakha-nlp-2026",
+      "provider": "github",
+      "repo_id": "enifimov81k/sakha-nlp-2026",
+      "role": "external_diagnostic_evaluation",
+      "priority": "P1",
+      "card_verified": true,
+      "declared_license": "CC-BY-NC-4.0",
+      "requirements": ["Verify intended use matches noncommercial terms", "Keep published NER document split", "Define explicit SAAS held-out protocol", "Exclude evaluation documents from language adaptation", "Review converted questions and field mappings on server"],
+      "notes": "Converters now support three-class SAAS and gold-span entity type classification. This is not full NER extraction F1."
+    },
+    "ud_yakut": {
+      "url": "https://universaldependencies.org/treebanks/sah_yktdt/index.html",
+      "provider": "github",
+      "repo_id": "UniversalDependencies/UD_Yakut-YKTDT",
+      "role": "held_out_morphology_syntax_diagnostic",
+      "priority": "P1",
+      "card_verified": true,
+      "declared_license": "CC-BY-SA-4.0",
+      "requirements": ["Pin UD release or commit", "Preserve CoNLL-U structure and provenance", "Keep test material out of adaptation corpus", "Review derived lemma MCQs; this is not a free-generation lemmatization metric"],
+      "notes": "Published overview reports 299 sentences and manual lemma, POS, morphology and dependency annotation."
+    },
+    "sakha_judge": {
+      "url": "https://huggingface.co/datasets/loalkota/sakha-judge",
+      "provider": "huggingface_dataset",
+      "repo_id": "loalkota/sakha-judge",
+      "role": "mixed_resource_requires_file_level_separation",
+      "priority": "P1",
+      "card_verified": true,
+      "gated": false,
+      "declared_license": "MIT",
+      "requirements": ["Inspect available files; release is partial", "Separate corpus components from human evaluation files", "Audit translated Alpaca and synthetic morphology quality", "Do not use LLM-judge scores as native-speaker gold labels"],
+      "notes": "Card describes translated instruction data, synthetic morphology, dictionary and philologist ratings for 21 items across 9 models and 3 criteria. Individual file provenance must be inspected."
+    },
+    "sakha_sft": {
+      "url": "https://huggingface.co/datasets/lab-ii/sakha_chat_ml-sft",
+      "provider": "huggingface_dataset",
+      "repo_id": "lab-ii/sakha_chat_ml-sft",
+      "role": "instruction_training_candidate_not_selected",
+      "priority": "P2",
+      "card_verified": true,
+      "gated": true,
+      "declared_license": null,
+      "requirements": ["User accepts access conditions", "Establish license and provenance", "Inspect dialogue schema and quality", "Separate instruction tuning from current language-model adaptation baseline"],
+      "notes": "Public README is empty; prior chat size claims are not treated as verified."
+    },
+    "x_wmt": {
+      "url": "https://github.com/turkic-interlingua/til-mt",
+      "provider": "github",
+      "repo_id": "turkic-interlingua/til-mt",
+      "role": "translation_evaluation_candidate",
+      "priority": "P2",
+      "card_verified": true,
+      "declared_license": null,
+      "requirements": ["Inspect exact available Sakha language directions", "Confirm test file licenses and revisions", "Keep all test translations out of adaptation", "Implement generation and translation metrics separately"],
+      "notes": "Repository includes TIL training resources and X-WMT tests; selecting files by role is essential."
+    }
+  },
+  "methodology_only": [
+    {"name": "Belebele", "url": "https://huggingface.co/datasets/facebook/belebele", "note": "Design reference for reading comprehension; do not infer that a Sakha translation is available."},
+    {"name": "TurkBench", "url": "https://aclanthology.org/2026.sigturk-1.12/", "note": "Reference from shared chat, not a Sakha dataset; paper not re-audited here."},
+    {"name": "KazMMLU", "url": "https://aclanthology.org/2025.acl-long.701/", "note": "Reference from shared chat, not a Sakha dataset; paper not re-audited here."},
+    {"name": "MERA", "url": "https://aclanthology.org/2024.acl-long.534/", "note": "Reference for evaluation methodology; not selected as a Sakha data source."}
+  ],
+  "deferred": [
+    {"url": "https://huggingface.co/datasets/lab-ii/sakha-ocr-synth", "reason": "Image OCR data; outside initial text-comprehension experiment"},
+    {"url": "https://mozilladatacollective.com/datasets/cmu62cfot00nco107nwfu13mz", "reason": "Speech data; outside initial text experiment; source not re-audited here"},
+    {"url": "https://huggingface.co/datasets/lab-ii/translate", "reason": "Source could not be fetched during this audit; synthetic provenance/quality and access remain unverified"}
+  ]
+}

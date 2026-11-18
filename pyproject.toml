@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sakha-byte"
+version = "0.1.0"
+description = "Reproducible pilot comparison of Bwen, Qwen and EvaByte on Sakha"
+requires-python = ">=3.11"
+license = "CC-BY-NC-4.0"
+license-files = ["LICENSE"]
+dependencies = ["huggingface-hub>=0.30,<1"]
+
+[project.scripts]
+sakha-byte = "sakha_byte.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["sakha_byte*"]

@@ -1,0 +1,9 @@
+{
+  "sakha_mono": {"provider":"hf", "repo_id":"ailabykt/sakha-corpus-mono", "ref":"main", "patterns":["*.parquet","*.jsonl","README.md"], "max_gib":3, "gated":true, "license":"CC-BY-4.0"},
+  "sakha_parallel": {"provider":"hf", "repo_id":"ailabykt/sakha-russian-parallel", "ref":"main", "patterns":["*.parquet","*.jsonl","README.md"], "max_gib":1, "gated":true, "license":"CC-BY-4.0"},
+  "wmt_yakut": {"provider":"hf", "repo_id":"wmt/yakut", "ref":"refs/convert/parquet", "patterns":["*.parquet"], "max_gib":1, "gated":false, "license":null},
+  "averoo_parallel": {"provider":"hf", "repo_id":"averoo/sakha-russian-parallel-corpora-all", "ref":"main", "patterns":["*.parquet","*.jsonl","README.md"], "max_gib":1, "gated":false, "license":null},
+  "sakha_judge": {"provider":"hf", "repo_id":"loalkota/sakha-judge", "ref":"main", "patterns":["corpus/*.jsonl","corpus/*.json","rubrics/*.md","human_labels/*","translation_benchmark/*","README.md"], "max_gib":1, "gated":false, "license":"MIT"},
+  "ud_yakut": {"provider":"github", "repo_id":"UniversalDependencies/UD_Yakut-YKTDT", "ref":"master", "patterns":["sah_yktdt-ud-test.conllu","LICENSE.txt","README.md"], "max_gib":0.1, "license":"CC-BY-SA-4.0"},
+  "sakha_ner_saas": {"provider":"github", "repo_id":"enifimov81k/sakha-nlp-2026", "ref":"main", "patterns":["sakha-ner/*.json","sakha-ner/*guidelines.md","sakha-sa/SAAS-corpus/*.json","sakha-sa/SAAS-corpus/*.jsonl","sakha-sa/SAAS-corpus/*.csv","sakha-sa/SAAS-corpus/*.tsv","sakha-sa/SAAS-corpus/*.xlsx","sakha-sa/SAAS-corpus/*.txt","sakha-sa/*guidelines.md","README.md","LICENSE*"], "max_gib":1, "license":"CC-BY-NC-4.0"}
+}

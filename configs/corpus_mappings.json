@@ -1,0 +1,11 @@
+{
+  "notes": "Mappings for gated files are candidate schemas. Run inspect-source on IMMERS, then edit paths explicitly if needed. No column guessing or language auto-detection.",
+  "profiles": {
+    "mono": {"source":"sakha_mono", "files":["*.parquet","*.jsonl"], "format":"auto", "mode":"mono", "text_field":"text", "source_field":"source", "document_field":null, "language_field":null, "language_value":"sah"},
+    "mono_by_source": {"source":"sakha_mono", "files":["*.parquet","*.jsonl"], "format":"auto", "mode":"mono", "text_field":"text", "source_field":"source", "document_field":"source", "language_field":null, "language_value":"sah"},
+    "parallel": {"source":"sakha_parallel", "files":["*.parquet","*.jsonl"], "format":"auto", "mode":"parallel", "sah_field":"sah", "ru_field":"ru", "source_field":null, "document_field":null},
+    "wmt": {"source":"wmt_yakut", "files":["*.parquet"], "format":"auto", "mode":"parallel", "sah_field":"translation.sah", "ru_field":"translation.ru", "source_field":null, "document_field":null},
+    "averoo": {"source":"averoo_parallel", "files":["*.parquet"], "format":"auto", "mode":"parallel", "sah_field":"sah", "ru_field":"ru", "source_field":null, "document_field":null},
+    "judge_alpaca": {"source":"sakha_judge", "files":["corpus/translated_alpaca_52002.jsonl"], "format":"jsonl", "mode":"instruction", "instruction_field":"instruction", "input_field":"input", "output_field":"output", "source_field":null, "document_field":null, "synthetic":true}
+  }
+}
