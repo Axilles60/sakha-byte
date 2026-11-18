@@ -16,5 +16,8 @@ id_ed25519*
 artifacts/
 data/
 results/
+.graphifyignore
+/.agents/skills/graphify/
+/scripts/graphify-immers.sh
 graphify-out/
 *.log
